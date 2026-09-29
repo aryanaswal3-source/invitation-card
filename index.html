@@ -1,112 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Birthday Invitation</title>
 
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="invitation-card">
+    <!-- Floating Balloons -->
+    <div class="balloons">
+        <div class="balloon b1"></div>
+        <div class="balloon b2"></div>
+        <div class="balloon b3"></div>
+        <div class="balloon b4"></div>
+        <div class="balloon b5"></div>
+    </div>
 
-        <!-- Decorative Elements -->
-        <div class="sparkle sparkle-1">✦</div>
-        <div class="sparkle sparkle-2">✧</div>
-        <div class="sparkle sparkle-3">✦</div>
 
-        <!-- Header -->
-        <header class="hero">
+    <!-- Floating Stars -->
+    <div class="stars">
+        <span>✦</span>
+        <span>✧</span>
+        <span>✦</span>
+        <span>✧</span>
+        <span>✦</span>
+        <span>✧</span>
+    </div>
 
-            <p class="small-title">YOU'RE INVITED</p>
+
+    <!-- Mobile Invitation -->
+
+    <main class="invitation">
+
+        <div class="inner-border"></div>
+
+
+        <!-- Top -->
+
+        <section class="top">
+
+            <div class="tiny-stars">
+                ✦ &nbsp; ✧ &nbsp; ✦
+            </div>
+
+            <p class="invitation-text">
+                YOU'RE INVITED TO
+            </p>
 
             <h1>
                 Birthday
-                <span>Celebration</span>
             </h1>
 
-            <div class="gold-line">
-                <span>✦</span>
-            </div>
+            <h2>
+                Celebration
+            </h2>
 
-        </header>
+            <p class="intro">
+                A little celebration,
+                a lot of happiness
+                and beautiful memories.
+            </p>
+
+        </section>
 
 
-        <!-- Baby Photo -->
-        <section class="photo-section">
+        <!-- Photo -->
+
+        <section class="photo-area">
+
+            <div class="photo-glow"></div>
 
             <div class="photo-frame">
 
-                <div class="photo-inner">
-                    <img src="images/family.jpg" alt="Birthday Baby">
+                <div class="photo">
+
+                    <img src="images/birthday.jpg" alt="Birthday Baby">
+
                 </div>
 
             </div>
+
+            <div class="photo-decoration left">✦</div>
+            <div class="photo-decoration right">✧</div>
 
         </section>
 
 
-        <!-- Date & Time -->
-        <section class="event-details">
+        <!-- Date -->
 
-            <div class="detail-box">
-                <span class="icon">📅</span>
-                <p class="label">DATE</p>
-                <h2>22 October 2026</h2>
+        <section class="date-card">
+
+            <div class="date-item">
+
+                <span class="date-icon">📅</span>
+
+                <div>
+                    <small>DATE</small>
+                    <strong>22 October 2026</strong>
+                </div>
+
             </div>
 
-            <div class="detail-box">
-                <span class="icon">⏰</span>
-                <p class="label">TIME</p>
-                <h2>07:00 PM</h2>
-            </div>
 
-        </section>
+            <div class="vertical-line"></div>
 
 
-        <!-- Menu -->
-        <section class="menu-section">
+            <div class="date-item">
 
-            <p class="section-small">A LITTLE SOMETHING</p>
+                <span class="date-icon">⏰</span>
 
-            <h2 class="section-title">The Menu</h2>
-
-            <div class="menu-line"></div>
-
-            <div class="menu-list">
-
-                <div class="menu-item">
-                    <span>✦</span>
-                    <p>Starters</p>
-                </div>
-
-                <div class="menu-item">
-                    <span>✦</span>
-                    <p>Main Course</p>
-                </div>
-
-                <div class="menu-item">
-                    <span>✦</span>
-                    <p>Birthday Cake</p>
-                </div>
-
-                <div class="menu-item">
-                    <span>✦</span>
-                    <p>Beverages</p>
-                </div>
-
-                <div class="menu-item">
-                    <span>✦</span>
-                    <p>Desserts</p>
+                <div>
+                    <small>TIME</small>
+                    <strong>07:00 PM</strong>
                 </div>
 
             </div>
@@ -115,45 +132,68 @@
 
 
         <!-- Location -->
-        <section class="location-section">
 
-            <p class="section-small">JOIN US AT</p>
+        <section class="location">
 
-            <h2 class="section-title">The Celebration</h2>
+            <div class="location-icon">
+                <span>📍</span>
+            </div>
 
-            <p class="location-text">
-                Your Celebration Venue,<br>
-                Dehradun, Uttarakhand
+            <p class="location-label">
+                CELEBRATION VENUE
             </p>
 
-            <a
-                href="https://maps.google.com"
-                target="_blank"
-                class="location-btn"
-            >
+            <h3>
+                The Park Bistro
+            </h3>
+
+            <p class="address">
+                70, Kanwali Rd, Vasant Vihar,<br>
+                Balliwala, Dehradun,<br>
+                Uttarakhand 248006
+            </p>
+
+            <a href="https://share.google/tL0Z5zXuGfEpxr0uV" target="_blank" rel="noopener noreferrer"
+                class="map-button">
                 <span>📍</span>
-                View Location
+                Open Location
+                <b>→</b>
             </a>
 
         </section>
 
 
-        <!-- Footer -->
+        <!-- Bottom -->
+
+        <section class="bottom">
+
+            <div class="divider">
+                <span></span>
+                <i>✦</i>
+                <span></span>
+            </div>
+
+            <p>
+                We can't wait to celebrate
+                this special day with you!
+            </p>
+
+            <div class="hearts">
+                ♥ &nbsp; ♥ &nbsp; ♥
+            </div>
+
+        </section>
+
+
         <footer>
-
-            <div class="footer-line"></div>
-
-            <p>We can't wait to celebrate with you!</p>
-
-            <span class="heart">♥</span>
-
+            WITH LOVE & JOY
         </footer>
 
-    </div>
+    </main>
 
 
-    <!-- JavaScript -->
     <script src="script.js"></script>
 
 </body>
+
 </html>

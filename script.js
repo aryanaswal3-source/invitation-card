@@ -1,98 +1,204 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* =========================
-       PAGE LOAD
-    ========================= */
+    /* =================================
+       EXTRA BALLOONS
+    ================================= */
 
-    document.body.classList.add("loaded");
-
-
-    /* =========================
-       SCROLL REVEAL
-    ========================= */
-
-    const sections = document.querySelectorAll(
-        ".hero, .photo-section, .event-details, .menu-section, .location-section, footer"
-    );
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-
-            entries.forEach((entry) => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("show");
-
-                    observer.unobserve(entry.target);
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.15
-        }
-    );
+    const container =
+        document.querySelector(".balloons");
 
 
-    sections.forEach((section) => {
+    function createBalloon() {
 
-        section.classList.add("reveal");
+        const balloon =
+            document.createElement("div");
 
-        observer.observe(section);
-
-    });
+        balloon.className = "balloon";
 
 
-    /* =========================
-       LOCATION BUTTON
-    ========================= */
+        const colors = [
 
-    const locationButton =
-        document.querySelector(".location-btn");
+            "linear-gradient(145deg,#ed9dae,#8f304c)",
 
-    if (locationButton) {
+            "linear-gradient(145deg,#e7cf8b,#9c7130)",
 
-        locationButton.addEventListener("click", () => {
+            "linear-gradient(145deg,#e99bad,#8c2946)",
 
-            console.log("Opening location...");
+            "linear-gradient(145deg,#f0d897,#9b702c)"
 
-        });
+        ];
+
+
+        balloon.style.background =
+            colors[
+                Math.floor(
+                    Math.random() *
+                    colors.length
+                )
+            ];
+
+
+        balloon.style.left =
+            Math.random() * 100 + "%";
+
+
+        const size =
+            Math.random() * 18 + 30;
+
+
+        balloon.style.width =
+            size + "px";
+
+        balloon.style.height =
+            size * 1.25 + "px";
+
+
+        balloon.style.animationDuration =
+            Math.random() * 5 + 8 + "s";
+
+
+        balloon.style.animationDelay =
+            Math.random() * 2 + "s";
+
+
+        container.appendChild(balloon);
+
+
+        setTimeout(() => {
+            balloon.remove();
+        }, 15000);
 
     }
 
 
-    /* =========================
-       SUBTLE CLICK EFFECT
-    ========================= */
+    /* Initial balloons */
 
-    document.addEventListener("click", (event) => {
+    for (let i = 0; i < 4; i++) {
 
-        const sparkle = document.createElement("span");
+        setTimeout(
+            createBalloon,
+            i * 1500
+        );
 
-        sparkle.innerHTML = "✦";
+    }
 
-        sparkle.style.position = "fixed";
-        sparkle.style.left = `${event.clientX}px`;
-        sparkle.style.top = `${event.clientY}px`;
 
-        sparkle.style.pointerEvents = "none";
-        sparkle.style.color = "#c9a45c";
-        sparkle.style.fontSize = "14px";
-        sparkle.style.zIndex = "9999";
+    /* Continuous balloons */
 
-        sparkle.style.animation =
-            "clickSparkle 0.8s ease-out forwards";
+    setInterval(
+        createBalloon,
+        2500
+    );
 
-        document.body.appendChild(sparkle);
 
-        setTimeout(() => {
+    /* =================================
+       CLICK SPARKLES
+    ================================= */
 
-            sparkle.remove();
+    document.addEventListener(
+        "click",
+        (event) => {
 
-        }, 800);
+            for (
+                let i = 0;
+                i < 5;
+                i++
+            ) {
 
-    });
+                const sparkle =
+                    document.createElement("span");
+
+
+                sparkle.innerHTML = "✦";
+
+
+                sparkle.style.position =
+                    "fixed";
+
+                sparkle.style.left =
+                    event.clientX + "px";
+
+                sparkle.style.top =
+                    event.clientY + "px";
+
+                sparkle.style.color =
+                    "#d8b66a";
+
+                sparkle.style.fontSize =
+                    "12px";
+
+                sparkle.style.pointerEvents =
+                    "none";
+
+                sparkle.style.zIndex =
+                    "9999";
+
+                sparkle.style.transition =
+                    "all .7s ease";
+
+
+                document.body.appendChild(
+                    sparkle
+                );
+
+
+                const angle =
+                    (Math.PI * 2 / 5) * i;
+
+
+                const distance = 35;
+
+
+                requestAnimationFrame(() => {
+
+                    sparkle.style.transform =
+                        `
+                        translate(
+                            ${Math.cos(angle) * distance}px,
+                            ${Math.sin(angle) * distance}px
+                        )
+                        scale(0)
+                        `;
+
+                    sparkle.style.opacity = "0";
+
+                });
+
+
+                setTimeout(() => {
+
+                    sparkle.remove();
+
+                }, 750);
+
+            }
+
+        }
+    );
+
+
+    /* =================================
+       IMAGE ERROR FALLBACK
+    ================================= */
+
+    const image =
+        document.querySelector(
+            ".photo img"
+        );
+
+
+    if (image) {
+
+        image.addEventListener(
+            "error",
+            () => {
+
+                image.style.display =
+                    "none";
+
+            }
+        );
+
+    }
 
 });
